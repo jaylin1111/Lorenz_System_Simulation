@@ -25,12 +25,11 @@ def lorenz(t, x, beta):
 sol = integrate.odeint(lorenz, x0, t_span, args=(beta,), tfirst=True)
 dataSet = np.array([sol[:,0], sol[:,1], sol[:,2], t_span])
 
-plt.style.use('dark_background')
 fig = plt.figure(figsize=(7, 7))
 ax = Axes3D(fig)
 fig.add_axes(ax)
 
-line = plt.plot(sol[:,0], sol[:,1], sol[:,2], lw=1.5, c='c')[0]
+line = plt.plot(sol[:,0], sol[:,1], sol[:,2], lw=1.5, c='b')[0]
 
 def func(num, dataSet, line):
     line.set_data(dataSet[0:2, :num])
@@ -43,4 +42,4 @@ line_ani = animation.FuncAnimation(fig, func, frames=numDataPoints, fargs=(dataS
 
 Writer = animation.writers['ffmpeg']
 writer = Writer(fps=60, metadata=dict(artist='Me'), bitrate=1e7)
-line_ani.save('lorenzSin.mp4', writer=writer)
+line_ani.save('lorenzSim.mp4', writer=writer)
