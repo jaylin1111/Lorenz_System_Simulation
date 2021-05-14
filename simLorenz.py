@@ -96,3 +96,4 @@ line_ani = animation.FuncAnimation(fig, update_lines, numDataPoints, fargs=(data
 Writer = animation.writers['ffmpeg']
 writer = Writer(fps=60, metadata=dict(artist='jlin'), bitrate=1e7)
 line_ani.save('lorenzSin.mp4', writer=writer)
+  # Instead of Sim   ^^^ I wrote Sin and I'm too lazy to rename everything so screw that
