@@ -87,13 +87,15 @@ line3, = [ax.plot(data3[0, 0:1], data3[1, 0:1], data3[2, 0:1], color="b", lw=2)[
 line_ani = animation.FuncAnimation(fig, update_lines, numDataPoints, fargs=(data1, data2, data3, line1, line2, line3), interval=50, blit=False)
 
 
-# SHOW PLOT
-# plt.show()
-
-
 # SAVING
 # I used ffmpeg cause it was the easiest to download, use whatever you want
 Writer = animation.writers['ffmpeg']
 writer = Writer(fps=60, metadata=dict(artist='jlin'), bitrate=1e7)
-line_ani.save('lorenzSin.mp4', writer=writer)
-  # Instead of Sim   ^^^ I wrote Sin and I'm too lazy to rename everything so screw that
+line_ani.save('lorenzSim.mp4', writer=writer)
+
+
+# SHOW PLOT
+plt.show()
+
+
+# And I'm fucking done with this project
